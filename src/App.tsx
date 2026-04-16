@@ -1,19 +1,23 @@
-import classNames from "classnames/bind";
-import styles from "./App.module.css";
+import styled from "styled-components";
+
+const Title = styled.h1<{ $color: string; $decoration: string }>`
+    color: ${(props) => props.$color};
+    text-decoration: ${(props) => props.$decoration};
+`;
+
+const Wrapper = styled.section`
+    padding: 2rem;
+    border: 1px solid red;
+`;
 
 export default function App() {
-    const isLoggedIn = true;
-    const cx = classNames.bind(styles);
     return (
         <>
-            <button
-                className={`${styles.btn} ${isLoggedIn ? styles["is-active"] : ""}`}
-            >
-                버튼
-            </button>
-            <button className={cx("btn", { "is-active": isLoggedIn })}>
-                버튼
-            </button>
+            <Wrapper>
+                <Title $color="#0000ff" $decoration="line-through">
+                    Hello, ReactJS!
+                </Title>
+            </Wrapper>
         </>
     );
 }

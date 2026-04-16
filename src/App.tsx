@@ -1,7 +1,11 @@
-import Inline from "./components/Inline";
+import "./App.css";
+import Global from "./components/Global";
 
 export default function App() {
-    const IsLoggedin = true;
-    const h1Style = { color: IsLoggedin ? "red" : "blue", fontSize: "25px" };
-    return <Inline h1Style={h1Style} />;
+    return (
+        <>
+            <h1 className="title">App Component</h1>
+            <Global />
+        </>
+    );
 }
